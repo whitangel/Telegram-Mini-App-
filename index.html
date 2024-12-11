@@ -215,8 +215,29 @@
             const savedName = localStorage.getItem('userName');
             const savedNumber = localStorage.getItem('userNumber');
             const userModal = document.getElementsById('userModal');
+            if(savedName && savedNumber) (
+              document.getElementById("userName').textContent = savedName;
+              document.getElementById('userNumber').textContent = savedNumber;
+            } else {
+                userModal.classList.add('active');  }
+         points parseInt(localStorage.getItem('userPoints') || '0');
+         balance parseFloat(localStorage.getItem('userBalance') || '0.00');         
+            updateBalance();            
+}); 
+        function saveUserInfo() {
+            const name = document.getElementById('inputName').value;
+            const number = document.getElementById('inputNumber').value;
+            If (name && number) {
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userliumber, number);
+                document.getElementById('userName').textContent = name;
+                document.getElementById("userNumber').textContent = number; 
+                document.getElementById('userModal').classList.remove('active');
+                } else { 
+                alert("Please enter both your name and number.");}}
+        //Reward ad function 
+        function showRewardedAd() {
             
-        })
     </script>
 </body>
 </html>
