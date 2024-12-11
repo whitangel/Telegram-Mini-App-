@@ -221,24 +221,32 @@
 
         //reward system
         function showRewardedAd() {
-            if (typeof show_8637247 === 'function') {
-                show_8637247().then(() => {
-                    points += 10;
-                    balance += 0.01;
-                    localStorage.setItem('userPoints', points);
-                    localStorage.setItem('userBalance', Balance);
-                    document.getElementById('userPoints').textContent = points;
-                    document.getElementById('userBalance').textContent = Balance.toFixed(2);
-                    alert('You have completed the task and earned 10 points.');
-                }).catch(error => {
-                    alert('Failed to earn points. Please, Try again.');
-                    console.error('Ad error:', error);
-                });
+    if (typeof show_8637247 === 'function') {
+        show_8637247()
+            .then(() => {
+                // Reward the user when the ad finishes
+                points += 10;
+                balance += 0.01;
+                localStorage.setItem('userPoints', points);
+                localStorage.setItem('userBalance', balance);
 
-            } else {
-                alert('Reward ad not available');
-                }
-            }
+                // Update UI
+                document.querySelector('.userPoints').textContent = points;
+                document.querySelector('.userBalance').textContent = balance.toFixed(2);
+
+                // Notify the user
+                alert('You have completed the task and earned 10 points.');
+            })
+            .catch(error => {
+                // Handle ad failure
+                alert('Failed to earn points. Please, try again.');
+                console.error('Ad error:', error);
+            });
+    } else {
+        alert('Reward ad not available.');
+    }
+        }
+        
         function updateBalance(){
             document.getElementById('userPoints').testContent = points;
             document.getElementById('userBalance').testContent = balance.toFixed(2);
