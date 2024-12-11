@@ -237,7 +237,73 @@
                 alert("Please enter both your name and number.");}}
         //Reward ad function 
         function showRewardedAd() {
-            
+            If (typeof show_8486638 === 'function'){
+
+               show_8486638().then(() => {
+               points += 10;
+
+               balance += 0.008;
+
+                // Increase points and balance on ad completion
+
+              localStorage.setItem('userPoints', points);
+
+              localStorage.setItem('userBalance', balance.toFixed(2));
+
+              document.getElementById('userPoints").textContent = points;
+
+              document.getElementById('userBalance').textContent = balance.toFixed(2);
+
+              alert('You have completed the Reward Task and earned 10 points!');
+               }).catch(error {
+
+              alert('Failed to show rewarded ad.');
+                   console.error("Ad error:", error);});
+                } else {
+                  alert('Rewarded ad not available.');
+           }}
+        function updateBalance() {
+
+                document.getElementById('userPoints').textContent = points;
+
+                document.getElementById('userBalance').textContent = balance.toFixed(2);
+                localStorage.setItem('userPoints', points);
+                localStorage.setItem('userBalance', balance.toFixed(2));
+        }  
+        document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        alert("Right-click isn't allowed!");});
+        document.addEventListener("keydown", function(e) {
+        // F12 ব্লক করা
+        if (e.key === "F12") {
+        e.preventDefault();
+        alert("Developer Tools isn't allowed!");}
+
+       // Ctrl Shift ব্লক করা (Chrome/Edge Inspector shortcut)
+
+       if (e.ctrlkey && e.shiftKey && e.key === "I") {
+       e.preventDefault();
+       alert("Developer Tools isn't allowed!");}
+
+       // Ctrl + Shift + J ব্লক করা (Chrome/Edge Console shortcut)
+       if (e.ctrlkey && e.shiftKey && e.key === "J") {
+       e.preventDefault();
+       alert("Developer Tools isn't allowed!");} 
+      // Ctrl Shift  C ব্লক করা (Chrome/Edge Inspector shortcut)
+            if (e.ctrlkey && e.shiftKey && e.key === "C") {
+       e.preventDefault();
+       alert("Developer Tools isn't allowed!");}
+
+        //ctrl U
+            if (e.ctrlkey && e.key === "U") {
+       e.preventDefault();
+       alert("Viewing page source isn't allowed!");}
+
+        //ctrl shift k
+            if (e.ctrlkey && e.shiftKey && e.key === "K") {
+       e.preventDefault();
+       alert("Developer Tools isn't allowed!");}
+        });
     </script>
 </body>
 </html>
