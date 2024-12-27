@@ -224,18 +224,22 @@
     if (typeof show_8636909 === 'function') {
         show_8636909()
             .then(() => {
-                // Reward the user when the ad finishes
-                points += 10;
-                balance += 0.01;
-                localStorage.setItem('userPoints', points);
-                localStorage.setItem('userBalance', balance);
+                // Simulate auto-closing by waiting for a timer
+                setTimeout(() => {
+                    // Assume ad closes automatically after 10 seconds
+                    // Reward the user
+                    points += 10;
+                    balance += 0.01;
+                    localStorage.setItem('userPoints', points);
+                    localStorage.setItem('userBalance', balance);
 
-                // Update UI
-                document.querySelector('.userPoints').textContent = points;
-                document.querySelector('.userBalance').textContent = balance.toFixed(2);
+                    // Update UI
+                    document.querySelector('.userPoints').textContent = points;
+                    document.querySelector('.userBalance').textContent = balance.toFixed(2);
 
-                // Notify the user
-                alert('You have completed the task and earned 10 points.');
+                    // Notify the user
+                    alert('You have completed the task and earned 10 points.');
+                }, 10000); // Adjust to match the ad's duration
             })
             .catch(error => {
                 // Handle ad failure
@@ -245,7 +249,8 @@
     } else {
         alert('Reward ad not available.');
     }
-        }
+}
+
         
         function updateBalance(){
             document.getElementById('userPoints').testContent = points;
@@ -253,6 +258,10 @@
 
 
         }
+    document.querySelectorAll('.modal-content').forEach(box => {
+    box.style.display = 'none';
+});
+        
 
     </script>
 </body>
