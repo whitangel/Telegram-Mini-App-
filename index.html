@@ -236,20 +236,17 @@
                     // Update UI
                     document.querySelector('.userPoints').textContent = points;
                     document.querySelector('.userBalance').textContent = balance.toFixed(2);
-
-                    // Notify the user
-                    alert('You have completed the task and earned 10 points.');
                 }, 15000); // 15 seconds timer
             })
             .catch(error => {
-                // Handle ad failure
-                alert('Failed to earn points. Please, try again.');
+                // Handle ad failure silently
                 console.error('Ad error:', error);
             });
     } else {
-        alert('Reward ad not available.');
+        console.log('Reward ad not available.');
     }
 }
+
 
 
         
