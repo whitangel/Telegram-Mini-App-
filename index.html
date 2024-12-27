@@ -222,12 +222,12 @@
         //reward system
         function showRewardedAd() {
     if (typeof show_8636909 === 'function') {
+        // Show the ad
         show_8636909()
             .then(() => {
-                // Simulate auto-closing by waiting for a timer
+                // Simulate the ad timer (15 seconds)
                 setTimeout(() => {
-                    // Assume ad closes automatically after 10 seconds
-                    // Reward the user
+                    // Reward the user after the ad timer ends
                     points += 10;
                     balance += 0.01;
                     localStorage.setItem('userPoints', points);
@@ -239,7 +239,7 @@
 
                     // Notify the user
                     alert('You have completed the task and earned 10 points.');
-                }, 10000); // Adjust to match the ad's duration
+                }, 15000); // 15 seconds timer
             })
             .catch(error => {
                 // Handle ad failure
@@ -250,6 +250,7 @@
         alert('Reward ad not available.');
     }
 }
+
 
         
         function updateBalance(){
